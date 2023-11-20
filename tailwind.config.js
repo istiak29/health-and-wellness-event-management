@@ -2,7 +2,11 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "slider-bg": "url('/src/assets/slider-bg.jpg')",
+      },
+    },
   },
   plugins: [require("daisyui")],
 };

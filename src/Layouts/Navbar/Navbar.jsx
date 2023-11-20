@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import userDefault from '../../assets/userDefault.png';
 
 const Navbar = () => {
 
@@ -28,6 +29,13 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
+                    <div>
+                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                            <div className="w-10 rounded-full">
+                                <img alt="Tailwind CSS Navbar component" src={userDefault} />
+                            </div>
+                        </label>
+                    </div>
                     <a className="btn">Button</a>
                 </div>
             </div>
