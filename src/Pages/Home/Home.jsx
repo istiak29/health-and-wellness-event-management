@@ -28,7 +28,7 @@ const Home = () => {
             <div className='flex justify-evenly'>
 
 
-                <div className='grid grid-cols-1 space-y-4 lg:grid-cols-2 gap-5'>
+                <div className='grid grid-cols-1 mt-4 lg:grid-cols-2 gap-6'>
                     {
                         services.map(service => <ServiceCard
                             key={service.id}

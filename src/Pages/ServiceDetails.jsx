@@ -17,10 +17,10 @@ const ServiceDetails = () => {
     }, []);
 
     return (
-        <div >
+        <div className="mb-12">
 
 
-            <div className="grid grid-cols-1 lg:grid-cols-4">
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-5">
 
                 {/* event details */}
                 <div className="lg:col-span-3 space-y-5">
@@ -40,8 +40,18 @@ const ServiceDetails = () => {
                 </div>
 
                 {/* Quotes */}
-                <div className="hidden  lg:block">
-                    <p className="text-lg font-semi-bold">Hello jkellodjfb</p>
+                <div className="hidden  lg:block items-center">
+                    <h2 className="text-lg font-bold text-teal-700 mb-12" data-aos="zoom-in">Quotes you Love to hear:</h2>
+                    
+                    <p data-aos="fade-down-left" className="text-lg font-semi-bold mb-8"> <span>&#39;</span>Discover the path to a healthier and happier you with our holistic approach to well-being. <span>&#39;</span></p>
+                    
+                    <p data-aos="fade-down-left" className="text-lg font-semi-bold mb-8"> <span>&#39;</span>Experience the transformative power of mindfulness, nutrition, and fitness at our wellness retreat.<span>&#39;</span></p>
+                    
+                    <p data-aos="fade-down-left" className="text-lg font-semi-bold mb-8"> <span>&#39;</span>Nurture your body, mind, and spirit with our curated collection of health and wellness resources. <span>&#39;</span></p>
+                    
+                    <p className="text-lg font-semi-bold mb-8" data-aos="fade-down-left"> <span>&#39;</span>Unlock the secrets to optimal health and well-being with our evidence-based approaches. <span>&#39;</span></p>
+
+
                 </div>
             </div>
 
