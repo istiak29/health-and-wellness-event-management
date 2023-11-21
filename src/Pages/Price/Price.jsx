@@ -2,7 +2,11 @@
 const Price = () => {
     return (
         <div>
-            everything is freeeeeeeeee
+            <div>
+                
+            </div>
+            <div></div>
+            <div></div>
         </div>
     );
 };

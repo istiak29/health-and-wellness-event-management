@@ -1,8 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
-import userDefault from '../../assets/userDefault.png';
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { FaUserAlt } from "react-icons/fa";
+import moment from "moment/moment";
 
 const Navbar = () => {
 
@@ -13,6 +13,7 @@ const Navbar = () => {
     </>
 
     const { user, logout } = useContext(AuthContext);
+    console.log(user);
 
     const handleLogout = () => {
         logout()
@@ -36,7 +37,7 @@ const Navbar = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    
+                    <p className="font-bold text-teal-700">{moment().format('MMMM Do YYYY, h:mm a') }</p>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -45,10 +46,24 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     <div>
+                        {
+                            user && (
+                                <h2 className="text-lg font-bold text-teal-800 border-2 border-green-600 p-1 mr-2 rounded-xl">
+                                    {user.displayName}</h2>
+                            )
+                        }
+                    </div>
+                    <div>
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="border-2 border-teal-800 rounded-full">
                                 
-                                <FaUserAlt className="text-4xl p-1"></FaUserAlt>
+                                {
+                                    user ? (
+                                        <figure className="w-10 rounded-full"><img src={ user.photoURL } alt="" /></figure>
+                                    ) :
+                                        (<FaUserAlt className="text-4xl p-1"></FaUserAlt>)
+                                }
+
                             </div>
                         </label>
                     </div>

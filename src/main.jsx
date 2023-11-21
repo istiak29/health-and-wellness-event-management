@@ -33,11 +33,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/price',
-        element: <Price></Price>
+        element: <PrivateRoute><Price></Price></PrivateRoute>
       },
       {
         path: '/pastEvents',
-        element: <PastEvents></PastEvents>
+        element: <PrivateRoute><PastEvents></PastEvents></PrivateRoute>
       },
       {
         path: '/login',
