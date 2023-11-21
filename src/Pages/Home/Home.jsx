@@ -3,9 +3,14 @@ import sliderPhoto from '../../assets/slider.png'
 import ServiceCard from '../ServiceCard';
 
 
+
 const Home = () => {
+
     const services = useLoaderData();
     console.log(services);
+
+    
+
     return (
         <>
             <div className="flex justify-around items-center">
@@ -21,6 +26,8 @@ const Home = () => {
             {/* service container */}
             <h2 className="text-2xl font-bold text-center text-zinc-950 mb-8">Event Services</h2>
             <div className='flex justify-evenly'>
+
+
                 <div className='grid grid-cols-1 space-y-4 lg:grid-cols-2 gap-5'>
                     {
                         services.map(service => <ServiceCard
