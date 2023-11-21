@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types'
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useEffect } from 'react';
+
 
 
 const ServiceCard = ({ service }) => {

@@ -12,6 +12,9 @@ import AuthProvider from './Providers/AuthProvider';
 import Price from './Pages/Price/Price';
 import PastEvents from './Pages/PastEvents/PastEvents';
 import ServiceDetails from './Pages/ServiceDetails';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+import Login from './Layouts/Login/Login';
+import Register from './Layouts/Register/Register';
 
 const router = createBrowserRouter([
   {
@@ -25,7 +28,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/service/:id',
-        element: <ServiceDetails></ServiceDetails>,
+        element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
         loader: () => fetch('/services.json')
       },
       {
@@ -35,6 +38,14 @@ const router = createBrowserRouter([
       {
         path: '/pastEvents',
         element: <PastEvents></PastEvents>
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
       }
 
     ]
