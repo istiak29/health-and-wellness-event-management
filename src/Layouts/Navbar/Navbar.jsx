@@ -1,10 +1,13 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { FaUserAlt } from "react-icons/fa";
 import moment from "moment/moment";
 
 const Navbar = () => {
+
+    
+    const navigate = useNavigate();
 
     const navLinks = <>
         <li><NavLink to={'/'}>Home</NavLink></li>
@@ -19,6 +22,9 @@ const Navbar = () => {
         logout()
             .then(userCredential => {
                 console.log(userCredential.user)
+
+                navigate('/')
+
             })
             .catch(error => {
                 console.error(error);

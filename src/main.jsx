@@ -15,6 +15,7 @@ import ServiceDetails from './Pages/ServiceDetails';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Login from './Layouts/Login/Login';
 import Register from './Layouts/Register/Register';
+import PageNotFound from './Pages/PageNotFound';
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '*',
+        element: <PageNotFound></PageNotFound>
       }
 
     ]

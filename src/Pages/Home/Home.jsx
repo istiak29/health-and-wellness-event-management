@@ -1,10 +1,11 @@
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import sliderPhoto from '../../assets/slider.png'
 import ServiceCard from '../ServiceCard';
 
 
 
 const Home = () => {
+
 
     const services = useLoaderData();
     console.log(services);
@@ -35,6 +36,20 @@ const Home = () => {
                             service={service}
                         ></ServiceCard>
                         )}
+                </div>
+            </div>
+            <div>
+                <div className="hero min-h-screen" style={{ backgroundImage: 'url("https://i.ibb.co/gD3tJvh/6.jpg")' }}>
+                    <div className="hero-overlay bg-opacity-60"></div>
+                    <div className="hero-content text-center text-neutral-content">
+                        <div className="max-w-md">
+                            <h1 className="mb-5 text-5xl font-bold">Hello, Wellness Enthusiast</h1>
+                            <p className="mb-5">Experience the transformative power of health and wellness with our personalized approach.</p>
+                            <button className='btn btn-success'>
+                                <Link to={'/pastEvents'}>See Events</Link>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>

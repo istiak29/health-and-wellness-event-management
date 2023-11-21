@@ -35,9 +35,9 @@ const Login = () => {
         login(email, password)
             .then(userCredential => {
                 console.log(userCredential.user)
-                setSuccess("Success!!")
+                setSuccess(true)
 
-                
+
                 navigate(location?.state ? location.state : '/')
 
             })
@@ -45,8 +45,8 @@ const Login = () => {
                 setErrorMessage(error.message);
                 console.error(error)
             });
-        
-        
+
+
     }
 
     useEffect(() => {
@@ -54,7 +54,7 @@ const Login = () => {
         AOS.refresh();
     }, []);
 
-    
+
 
 
     const handleGoogleSignIn = () => {
@@ -129,9 +129,14 @@ const Login = () => {
                             )}
 
                             {success && (
-                                <p className="text-sm font-bold text-green-500">{success}</p>
+
+                                <div className="toast toast-top toast-center">
+                                    <div className="alert alert-success text-sm font-bold text-green-500">
+                                        <span>Login successfully.</span>
+                                    </div>
+                                </div>
                             )}
-                            
+
                             <p>
                                 <button onClick={handleGoogleSignIn} className="btn btn-outline btn-success w-full">
                                     <FaGoogle></FaGoogle> sign in with Google
