@@ -11,6 +11,7 @@ import Root from './Root/Root';
 import AuthProvider from './Providers/AuthProvider';
 import Price from './Pages/Price/Price';
 import PastEvents from './Pages/PastEvents/PastEvents';
+import ServiceDetails from './Pages/ServiceDetails';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,11 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
+        loader: () => fetch('/services.json')
+      },
+      {
+        path: '/service/:id',
+        element: <ServiceDetails></ServiceDetails>,
         loader: () => fetch('/services.json')
       },
       {
